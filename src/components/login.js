@@ -26,7 +26,7 @@ const {setInfo}=useContext(UserContext);
       setmsg("Fill the credential");
     } else {
       e.preventDefault();
-      const response= await fetch('http://localhost:8000/login',{
+      const response= await fetch('https://blogapp3.onrender.com/login',{
            method:'POST',
            body:JSON.stringify({email,password}),
            headers:{'Content-Type':'application/json'},
@@ -62,7 +62,7 @@ setRedirect(true);
       setmsg("Fill the credential");
     } else {
       e.preventDefault();
-   const response= await fetch('http://localhost:8000/reg',{
+   const response= await fetch('https://blogapp3.onrender.com/reg',{
         method:'POST',
         body:JSON.stringify({rname,remail,rpassword}),
         headers:{'Content-Type':'application/json'}
