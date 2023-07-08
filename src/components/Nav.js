@@ -4,15 +4,24 @@ import { UserContext } from "../context/userContext";
 const Navbar = () => {
 const {setInfo,info}=useContext(UserContext);
 const user=info?.name;
-  useEffect(() => {
-    fetch("http://localhost:8000/myprofile", { credentials: "include" }).then(
-      (data) => {
-        data.json().then((userInfo) => {
-           setInfo(userInfo);
-        });
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await fetch("http://localhost:8000/myprofile", { credentials: "include" });
+      if (!response.ok) {
+        throw new Error("Failed to fetch profile");
       }
-    );
-  }, []);
+      const userInfo = await response.json();
+      setInfo(userInfo);
+    } catch (error) {
+      console.error(error);
+    
+    }
+  };
+
+  fetchData();
+}, []);
+
 
   //logout
   const logout=()=>{
