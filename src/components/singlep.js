@@ -6,7 +6,7 @@ const SinglePost = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/post/${id}`)
+    fetch(`https://blogapp3.onrender.com/post/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setPost(data);
@@ -24,7 +24,7 @@ console.log(post)
     <div>
       <h4>Detailed Post Page</h4>
       <div>
-        <div> <img className="cov1" src={`http://localhost:8000/${post?.cover}`} alt="" /></div>
+        <div> <img className="cov1" src={`https://blogapp3.onrender.com/${post?.cover}`} alt="" /></div>
         <div className="det">
         <h5>Title: {post.title}</h5>
         <h5>Written By:{post?.author?.name}</h5>
