@@ -9,7 +9,7 @@ const Navbar = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await fetch("http://localhost:8000/myprofile", { credentials: "include" });
+          const response = await fetch("https://blogapp3.onrender.com/myprofile", { credentials: "include" });
           if (!response.ok) {
             throw new Error("Failed to fetch profile");
           }
@@ -30,7 +30,7 @@ const Navbar = () => {
 
   // Logout
   const logout = () => {
-    fetch("http://localhost:8000/logout", {
+    fetch("https://blogapp3.onrender.com/logout", {
       method: "POST",
       credentials: "include",
     });
