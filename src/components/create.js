@@ -20,7 +20,7 @@ const CreateBlog=()=>{
           data.set('file', files[0]);
       
           try {
-            const response = await fetch('http://localhost:8000/createBlog', {
+            const response = await fetch('https://blogapp3.onrender.com/createBlog', {
               method: 'POST',
               body: data,
               credentials:'include',
