@@ -9,7 +9,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await fetch('http://localhost:8000/post');
+        const response = await fetch('https://blogapp3.onrender.com/post');
         if (!response.ok) {
           throw new Error('Failed to fetch posts');
         }
@@ -42,7 +42,7 @@ const Blog = () => {
             <div className="post" key={data._id}>
               <div className="cov">
                 <Link to={`/singlepost/${data._id}`}>
-                  <img className="cov" src={`http://localhost:8000/${data?.cover}`} alt="" />
+                  <img className="cov" src={`https://blogapp3.onrender.com/${data?.cover}`} alt="" />
                 </Link>
               </div>
               <h5>Title:<span>{data?.title}</span></h5>
